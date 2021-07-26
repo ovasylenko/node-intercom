@@ -105,6 +105,7 @@ client.useRequestOpts({
   }
 });
 ```
+
 ## Leads
 
 ```node
