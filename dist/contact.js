@@ -81,7 +81,7 @@ var Contact = /*#__PURE__*/function () {
   }, {
     key: "search",
     value: function search(params, f) {
-      return this.client.get('/contacts/search', params, f);
+      return this.client.post('/contacts/search', params, f);
     }
   }, {
     key: "listAttachedCompanies",
