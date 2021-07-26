@@ -1,25 +1,16 @@
 # intercom-node
 
-[![Circle CI](https://circleci.com/gh/intercom/intercom-node.png?style=shield)](https://circleci.com/gh/intercom/intercom-node)
-[![npm](https://img.shields.io/npm/v/intercom-client)](https://www.npmjs.com/package/intercom-client)
-![Intercom API Version](https://img.shields.io/badge/Intercom%20API%20Version-1.3-blue)
+![Intercom API Version](https://img.shields.io/badge/Intercom%20API%20Version-2.3-blue)
 
 > Official Node bindings to the [Intercom API](https://api.intercom.io/docs)
 
 ## Project Updates
 
-### Maintenance
-
-We're currently building a new team to provide in-depth and dedicated SDK support.
-
-In the meantime, we'll be operating on limited capacity, meaning all pull requests will be evaluated on a best effort basis and will be limited to critical issues.
-
-We'll communicate all relevant updates as we build this new team and support strategy in the coming months.
 
 ## Installation
 
 ```bash
-yarn add intercom-client
+yarn add intercom-node
 ```
 
 **This client is intended for server side use only. Please use the [Intercom Javascript SDK](https://developers.intercom.com/v2.0/docs/intercom-javascript) for client-side operations.**
@@ -49,7 +40,7 @@ var Intercom = require('./dist/index');
 Require Intercom:
 
 ```node
-var Intercom = require('intercom-client');
+var Intercom = require('intercom-node');
 ```
 
 Create a client using access tokens:
@@ -110,95 +101,10 @@ We version our API (see the "Choose Version" section of the [API & Webhooks Refe
 var client = new Intercom.Client({ token: 'my_token' });
 client.useRequestOpts({
   headers: {
-    'Intercom-Version': 1.2
+    'Intercom-Version': 2.3
   }
 });
 ```
-
-## Users
-
-```node
-// Create a user
-client.users.create({
-  email: 'jayne@serenity.io',
-  custom_attributes: {
-    foo: 'bar'
-  }
-}, callback);
-
-// Update a user
-client.users.update({
-  email: 'jayne@serenity.io',
-  custom_attributes: {
-    foo: 'bar'
-  }
-}, callback);
-```
-
-```node
-// Create/update a user with custom attributes
-client.users.create({ email: 'jayne@serenity.io', custom_attributes: { invited_friend: true } }, callback);
-```
-
-```node
-// List users
-client.users.list(callback);
-```
-
-```node
-// List users by tag or segment
-client.users.listBy({ tag_id: 'haven' }, callback);
-```
-
-```node
-// Scroll through users list
-client.users.scroll.each({}, function(res) {
-  // if you return a promise from your callback, the client will only scroll
-  // after this promise has resolved
-  new Bluebird((resolve) => {
-    setTimeout(() => {
-      console.log(res.body.users.length);
-      // Your custom logic
-      resolve();
-   }, 500)
- })
-});
-
-```
-
-```node
-// Find user by id
-client.users.find({ id: '55b9eaf' }, callback);
-
-// Find user by user_id
-client.users.find({ user_id: 'foobar' }, callback);
-
-// Find user by email
-client.users.find({ email: 'jayne@serenity.io' }, callback);
-```
-
-```node
-// Archive user by id (https://developers.intercom.com/intercom-api-reference/reference#archive-a-user)
-client.users.archive({ id: '1234' }, callback);
-```
-
-```node
-// Permanently delete a user by id (https://developers.intercom.com/intercom-api-reference/reference#delete-users)
-const intercomUserId = '123'
-client.users.requestPermanentDeletion(intercomUserId, callback);
-```
-
-```node
-// Permanently delete a user by id in params
-client.users.requestPermanentDeletionByParams({ id: '55b9eaf' }, callback);
-
-// Permanently delete a user by user_id
-client.users.requestPermanentDeletionByParams({ user_id: 'foobar' }, callback);
-
-// Permanently delete a user by email
-client.users.requestPermanentDeletionByParams({ email: 'jayne@serenity.io' }, callback);
-```
-
 ## Leads
 
 ```node
@@ -616,7 +522,7 @@ client.nextPage(response.pages, callback);
 `intercom-node` provides a helper for using [identity verification](https://docs.intercom.com/configure-intercom-for-your-product-or-site/staying-secure/enable-identity-verification-on-your-web-product):
 
 ``` node
-import { IdentityVerification } from 'intercom-client';
+import { IdentityVerification } from 'intercom-node';
 
 IdentityVerification.userHash({secretKey: 's3cre7', identifier: 'jayne@serenity.io'});
 ```

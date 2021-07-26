@@ -1,13 +1,13 @@
 {
-  "name": "intercom-client",
+  "name": "intercom-node",
   "version": "2.11.2",
   "description": "Official Node bindings to the Intercom API",
-  "homepage": "https://github.com/intercom/intercom-node",
-  "bugs:": "https://github.com/intercom/intercom-node/issues",
-  "repository": "intercom/intercom-node",
+  "homepage": "https://github.com/ovasylenko/intercom-node",
+  "bugs:": "https://github.com/ovasylenko/intercom-node/issues",
+  "repository": "ovasylenko/intercom-node",
   "author": {
-    "name": "Bob Long",
-    "email": "bob@intercom.io"
+    "name": "Oleksii Vasylenko",
+    "email": "lxvslnk@gmail.com"
   },
   "files": [
     "dist"
