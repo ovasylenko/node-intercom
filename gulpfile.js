@@ -43,5 +43,5 @@ gulp.task('babel', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('prepublish', gulp.series('babel'));
+gulp.task('build', gulp.series('babel'));
 gulp.task('default', gulp.series('static', 'test'));

@@ -41,7 +41,7 @@
     "sinon": "^7.3.2"
   },
   "scripts": {
-    "prepublish": "gulp prepublish",
+    "build": "gulp build",
     "test": "gulp"
   },
   "engines": {
