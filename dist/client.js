@@ -72,7 +72,6 @@ var Client = /*#__PURE__*/function () {
       throw new Error('Could not construct a client with those parameters');
     }
 
-    this.users = new User(this);
     this.events = new _event["default"](this);
     this.companies = new _company["default"](this);
     this.contacts = new _contact["default"](this);
