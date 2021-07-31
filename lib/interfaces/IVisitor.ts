@@ -1,3 +1,4 @@
+import { ISegment } from './ISegment';
 import { ISocialProfile } from './ISocialProfile';
 import { ITag } from './ITag';
 
@@ -13,7 +14,7 @@ export interface IVisitor {
   avatar: Object;
   unsubscribed_from_emails: Boolean;
   location_data: Object;
-  social_profiles: ISocialProfile;
-  segments: Array;
-  tags: ITag;
+  social_profiles: ISocialProfile[];
+  segments: ISegment[];
+  tags: ITag[];
 }

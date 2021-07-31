@@ -14,7 +14,7 @@ export interface IContact {
   name: String;
   avatar: String;
   owner_id: Number;
-  social_profiles: ISocialProfile;
+  social_profiles: ISocialProfile[];
   has_hard_bounced: Boolean;
   marked_email_as_spam: Boolean;
   unsubscribed_from_emails: Boolean;
@@ -45,7 +45,7 @@ export interface IContact {
   ios_sdk_version: String;
   ios_last_seen_at: Date;
   custom_attributes: Object;
-  tags: ITag;
+  tags: IAddressableList | ITag[];
   notes: IAddressableList;
   companies: IAddressableList;
 }
