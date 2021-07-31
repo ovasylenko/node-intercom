@@ -7,6 +7,6 @@ export interface IAdmin {
   away_mode_enabled: Boolean;
   away_mode_reassign: Boolean;
   has_inbox_seat: Boolean;
-  team_ids: Array;
+  team_ids: Number[];
   avatar: String;
 }

@@ -6,7 +6,7 @@ export interface IData {
   label: String;
   description: String;
   data_type: String;
-  options: Array;
+  options: any[];
   api_writable: Boolean;
   ui_writable: Boolean;
   custom: Boolean;

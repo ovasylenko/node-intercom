@@ -1,8 +1,10 @@
+import { IAddressableObject } from './IAddressableObject';
+
 export interface INote {
   type: String;
   id: String;
   created_at: Date;
-  user: Object;
+  user: IAddressableObject;
   body: String;
-  author: Object;
+  author: IAddressableObject;
 }

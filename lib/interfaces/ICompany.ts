@@ -1,4 +1,6 @@
 import { IPlan } from './IPlan';
+import { IAddressableObject } from './IAddressableObject';
+
 
 export interface ICompany {
   type: String;
@@ -9,7 +11,7 @@ export interface ICompany {
   last_created_at: Date;
   company_id: String;
   name: String;
-  custom_attributes: Object;
+  custom_attributes: IAddressableObject;
   session_count: Number;
   monthly_spend: Number;
   user_count: Number;

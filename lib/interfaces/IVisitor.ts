@@ -1,6 +1,7 @@
 import { ISegment } from './ISegment';
 import { ISocialProfile } from './ISocialProfile';
 import { ITag } from './ITag';
+import { IAddressableObject } from './IAddressableObject';
 
 export interface IVisitor {
   type: String;
@@ -9,11 +10,11 @@ export interface IVisitor {
   updated_at: Date;
   user_id: String;
   name: String;
-  custom_attributes: Object;
+  custom_attributes: IAddressableObject;
   last_request_at: Date;
-  avatar: Object;
+  avatar: IAddressableObject;
   unsubscribed_from_emails: Boolean;
-  location_data: Object;
+  location_data: IAddressableObject;
   social_profiles: ISocialProfile[];
   segments: ISegment[];
   tags: ITag[];
