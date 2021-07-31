@@ -1,8 +1,11 @@
 import axios, { AxiosResponse } from 'axios'
 import merge from 'lodash.merge'
+import Company from './company';
 import Contact from './contact';
-
+import { ICompany } from './interfaces/ICompany';
 import { IContact } from "./interfaces/IContact";
+import { IVisitor } from './interfaces/IVisitor';
+import Visitor from './visitor';
 
 interface IClientConstructor {
   new (property: IClientArguments): IClient;
@@ -10,6 +13,9 @@ interface IClientConstructor {
 
 export interface IClient {
   contacts: IContact | null;
+  companies: ICompany | null;
+  visitors: IVisitor | null;
+
   useRequestOpts: (any) => void;
   requestOpts: {
     headers?: {
@@ -50,13 +56,9 @@ export default class Client implements IClient {
 
   requestOpts = {};
   contacts = null;
-  constructor({
-    username,
-    password,
-    token,
-    appId,
-    appApiKey,
-  }) {
+  companies = null;
+  visitors = null;
+  constructor({ username, password, token, appId, appApiKey }) {
     if (username && password) this.authType = AUTH_TYPE.LOGIN_PASS;
     if (token) this.authType = AUTH_TYPE.TOKEN;
     if (appId && appApiKey) this.authType = AUTH_TYPE.API_KEY;
@@ -65,17 +67,18 @@ export default class Client implements IClient {
       throw new Error("Could not construct a client with those parameters");
     }
 
-    this.token = token
+    this.token = token;
     this.requestOpts = {
       headers: {
         "Intercom-Version": INTERCOM_VERSION,
       },
     };
     this.contacts = new Contact(this);
+    this.companies = new Company(this);
+    this.visitors = new Visitor(this);
     // this.events = new Event(this);
     // this.companies = new Company(this);
     // this.contacts = new Contact(this);
-    // this.leads = new Contact(this);
     // this.visitors = new Visitor(this);
     // this.counts = new Counts(this);
     // this.admins = new Admin(this);
@@ -85,7 +88,6 @@ export default class Client implements IClient {
     // this.conversations = new Conversation(this);
     // this.notes = new Note(this);
     // this.customers = new Customer(this);
-    // this.promises = false;
   }
 
   useRequestOpts(opts) {
@@ -97,14 +99,14 @@ export default class Client implements IClient {
     });
     return response.status;
   }
-  put(endpoint, data ={}) {
+  put(endpoint, data = {}) {
     return this.request({
       method: "put",
       url: endpoint,
       data,
     });
   }
-  post(endpoint, data={}) {
+  post(endpoint, data = {}) {
     return this.request({
       method: "post",
       url: endpoint,
@@ -114,7 +116,7 @@ export default class Client implements IClient {
   get(endpoint) {
     return this.request({
       method: "get",
-      url: endpoint
+      url: endpoint,
     });
   }
   nextPage(paginationObject) {
@@ -124,7 +126,7 @@ export default class Client implements IClient {
       baseUrl: null,
     });
   }
-  delete(endpoint, data={}) {
+  delete(endpoint, data = {}) {
     return this.request({
       method: "delete",
       url: endpoint,

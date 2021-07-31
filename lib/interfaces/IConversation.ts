@@ -8,7 +8,7 @@ export interface IConversation {
   updated_at: Date;
   source: Object;
   contacts: IContact[];
-  teammates: Array;
+  // teammates: Array;
   title: String;
   admin_assignee_id: Number;
   team_assignee_id: Number;
@@ -24,5 +24,5 @@ export interface IConversation {
   sla_applied: Object;
   conversation_rating: Object;
   statistics: Object;
-  conversation_parts: Array;
+  // conversation_parts: Array;
 }
