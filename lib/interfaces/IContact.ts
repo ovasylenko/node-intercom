@@ -9,7 +9,7 @@ export interface IContact {
   name: string;
   avatar: string;
   owner_id: number;
-  social_profiles: [];
+  social_profiles: Array;
   has_hard_bounced: boolean;
   marked_email_as_spam: boolean;
   unsubscribed_from_emails: boolean;
@@ -26,7 +26,7 @@ export interface IContact {
   browser_version: string;
   browser_language: string;
   os: string;
-  location: {};
+  location: Object;
   android_app_name: string;
   android_app_version: string;
   android_device: string;
@@ -39,8 +39,8 @@ export interface IContact {
   ios_os_version: string;
   ios_sdk_version: string;
   ios_last_seen_at: Date;
-  custom_attributes: {};
-  tags: [];
-  notes: [];
-  companies: [];
+  custom_attributes: Object;
+  tags: Array;
+  notes: Array;
+  companies: Array;
 }
