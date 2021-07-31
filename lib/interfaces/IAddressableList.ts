@@ -1,7 +1,7 @@
 export interface IAddressableList {
-  type: string;
+  type: String;
   data: Array;
-  url: string;
-  owner_id: number;
-  has_more: boolean;
+  url: String;
+  owner_id: Number;
+  has_more: Boolean;
 }

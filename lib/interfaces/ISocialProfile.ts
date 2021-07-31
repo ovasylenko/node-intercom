@@ -1,5 +1,5 @@
 export interface ISocialProfile {
-  type: string;
-  name: string;
-  url: string;
+  type: String;
+  name: String;
+  url: String;
 }

@@ -1,6 +1,6 @@
 export interface ILocation {
-  type: string;
-  country: string;
-  region: string;
-  city: string;
+  type: String;
+  country: String;
+  region: String;
+  city: String;
 }
