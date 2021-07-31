@@ -1,3 +1,7 @@
+import { IAddressableList } from './IAddressableList';
+import { ILocation } from './ILocation';
+import { ISocialProfile } from './ISocialProfile';
+
 export interface IContact {
   type: string;
   id: string;
@@ -9,7 +13,7 @@ export interface IContact {
   name: string;
   avatar: string;
   owner_id: number;
-  social_profiles: Array;
+  social_profiles: ISocialProfile;
   has_hard_bounced: boolean;
   marked_email_as_spam: boolean;
   unsubscribed_from_emails: boolean;
@@ -26,7 +30,7 @@ export interface IContact {
   browser_version: string;
   browser_language: string;
   os: string;
-  location: Object;
+  location: ILocation;
   android_app_name: string;
   android_app_version: string;
   android_device: string;
@@ -40,7 +44,7 @@ export interface IContact {
   ios_sdk_version: string;
   ios_last_seen_at: Date;
   custom_attributes: Object;
-  tags: Array;
-  notes: Array;
-  companies: Array;
+  tags: IAddressableList;
+  notes: IAddressableList;
+  companies: IAddressableList;
 }
