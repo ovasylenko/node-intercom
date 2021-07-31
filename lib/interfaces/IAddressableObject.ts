@@ -1,5 +1,5 @@
 export interface IAddressableObject {
   type: String;
-  id: [];
+  id: number[];
   url: string;
 }
