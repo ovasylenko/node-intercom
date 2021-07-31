@@ -1,4 +1,5 @@
 import { ISocialProfile } from './ISocialProfile';
+import { ITag } from './ITag';
 
 export interface IVisitor {
   type: String;
@@ -14,5 +15,5 @@ export interface IVisitor {
   location_data: Object;
   social_profiles: ISocialProfile;
   segments: Array;
-  tags: Array;
+  tags: ITag;
 }

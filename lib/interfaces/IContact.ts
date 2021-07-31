@@ -1,4 +1,5 @@
 import { IAddressableList } from './IAddressableList';
+import { ITag } from './ITag';
 import { ILocation } from './ILocation';
 import { ISocialProfile } from './ISocialProfile';
 
@@ -44,7 +45,7 @@ export interface IContact {
   ios_sdk_version: String;
   ios_last_seen_at: Date;
   custom_attributes: Object;
-  tags: IAddressableList;
+  tags: ITag;
   notes: IAddressableList;
   companies: IAddressableList;
 }
