@@ -1,4 +1,4 @@
-export interface IVisitor {
+export interface ITeam {
   type: String;
   id: String;
   name: String;
