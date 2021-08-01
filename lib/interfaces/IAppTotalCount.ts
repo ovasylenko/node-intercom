@@ -1,15 +1,9 @@
+import { ICount } from './ICount';
+
 export interface IAppTotalCount {
   type: String;
-  company: {
-    count: Number;
-  };
-  segments: {
-    count: Number;
-  };
-  tag: {
-    count: Number;
-  };
-  user: {
-    count: Number;
-  };
+  company: ICount;
+  segments: ICount;
+  tag: ICount;
+  user: ICount;
 }

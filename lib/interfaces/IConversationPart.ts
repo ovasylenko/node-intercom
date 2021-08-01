@@ -1,4 +1,4 @@
-export interface IConversation {
+export interface IConversationPart {
   type: String;
   id: String;
   part_type: String;

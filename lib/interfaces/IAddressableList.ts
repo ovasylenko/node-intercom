@@ -1,8 +1,8 @@
-import { IData } from './IData';
+import { IAddressableObject } from './IAddressableObject';
 
 export interface IAddressableList {
   type: String;
-  data: IData[];
+  data: IAddressableObject[];
   url: String;
   owner_id: Number;
   has_more: Boolean;

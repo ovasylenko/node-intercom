@@ -6,5 +6,4 @@ export interface IMessage {
   body: String;
   message_type: String;
   conversation_id: String;
-
 }

@@ -1,10 +1,11 @@
-import { IAddressableObject } from './IAddressableObject';
+import { IAuthorNote } from './IAuthorNote';
+import { IUser } from './IUser';
 
 export interface INote {
   type: String;
   id: String;
   created_at: Date;
-  user: IAddressableObject;
+  user: IUser;
   body: String;
-  author: IAddressableObject;
+  author: IAuthorNote;
 }

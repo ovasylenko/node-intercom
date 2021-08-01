@@ -1,4 +1,5 @@
 import { ISegment } from './ISegment';
+import { ILocation } from './ILocation';
 import { ISocialProfile } from './ISocialProfile';
 import { ITag } from './ITag';
 import { IAddressableObject } from './IAddressableObject';
@@ -14,7 +15,7 @@ export interface IVisitor {
   last_request_at: Date;
   avatar: IAddressableObject;
   unsubscribed_from_emails: Boolean;
-  location_data: IAddressableObject;
+  location_data: ILocation;
   social_profiles: ISocialProfile[];
   segments: ISegment[];
   tags: ITag[];
